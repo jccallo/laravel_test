@@ -13,12 +13,12 @@
             <div class="col-sm-6 col-12">
                 <div class="form-row form-inline justify-content-end">
                     <div class="col-auto my-1">
-                        <a href="{{route("customers.index")}}" class="btn btn-link">Volver al Listado</a>
+                        <a href="{{ route('customers.index') }}" class="btn btn-link">Volver al Listado</a>
                     </div>
                 </div>
             </div>
         </div>
-        <form action="{{route("customers.store")}}" method="POST">
+        <form action="{{ route('customers.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label>Nombre:</label>

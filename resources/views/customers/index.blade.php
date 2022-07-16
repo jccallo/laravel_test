@@ -13,7 +13,7 @@
             <div class="col-sm-6 col-12">
                 <div class="form-row form-inline justify-content-end">
                     <div class="col-auto my-1">
-                        <a href="{{route("customers.create")}}" class="btn btn-primary">
+                        <a href="{{ route('customers.create') }}" class="btn btn-primary">
                             Nuevo Cliente
                         </a>
                     </div>
@@ -40,13 +40,14 @@
                         <td>{{ $customer->email }}</td>
                         <td>{{ $customer->dni }}</td>
                         <td class="text-right">
-                            <a href="{{ route('customers.show', $customer->id) }}" class="btn btn-secondary btn-sm">
+                            <a href="{{ route('customers.show', $customer) }}" class="btn btn-secondary btn-sm">
                                 <i class="bi bi-eye"></i>
                             </a>
-                            <a href="{{ route('customers.edit', $customer->id) }}" class="btn btn-primary btn-sm">
+                            <a href="{{ route('customers.edit', $customer) }}" class="btn btn-primary btn-sm">
                                 <i class="bi bi-pencil"></i>
                             </a>
-                            <form action="{{ route('customers.destroy', $customer->id) }}" method="POST" style="display: inline-block">
+                            <form action="{{ route('customers.destroy', $customer) }}" method="POST"
+                                style="display: inline-block">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>

@@ -18,9 +18,13 @@
                 </div>
             </div>
         </div>
-        <form action="{{ route('customers.update', $customer->id) }}" method="POST">
+        <form action="{{ route('customers.update', $customer) }}" method="POST">
             @csrf
             @method('put')
+            <div class="form-group">
+                <label>Id:</label>
+                <input type="text" class="form-control" value="{{ $customer->id }}" disabled>
+            </div>
             <div class="form-group">
                 <label>Nombre:</label>
                 <input type="text" class="form-control" name="first_name" value="{{ $customer->first_name }}">
