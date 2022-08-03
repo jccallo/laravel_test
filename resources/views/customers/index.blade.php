@@ -1,20 +1,20 @@
 @extends('layouts.template')
 
-@section('title', 'Listado de Clientes')
+@section('title', 'Customer list')
 
 @section('content')
     <div class="container">
         <div class="row align-items-center mb-2">
             <div class="col-sm-6 col-12">
                 <div class="h1">
-                    Listado de Clientes
+                    Customer list
                 </div>
             </div>
             <div class="col-sm-6 col-12">
                 <div class="form-row form-inline justify-content-end">
                     <div class="col-auto my-1">
                         <a href="{{ route('customers.create') }}" class="btn btn-primary">
-                            Nuevo Cliente
+                            New Customer
                         </a>
                     </div>
                 </div>
@@ -24,11 +24,12 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Dni</th>
-                    <th scope="col" class="text-right">Acciones</th>
+                    <th scope="col">Document</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col" class="text-right">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,7 +39,8 @@
                         <td>{{ $customer->first_name }}</td>
                         <td>{{ $customer->last_name }}</td>
                         <td>{{ $customer->email }}</td>
-                        <td>{{ $customer->dni }}</td>
+                        <td>{{ $customer->document }}</td>
+                        <td>{{ $customer->phone }}</td>
                         <td class="text-right">
                             <a href="{{ route('customers.show', $customer) }}" class="btn btn-secondary btn-sm">
                                 <i class="bi bi-eye"></i>
